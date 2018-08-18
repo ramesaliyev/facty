@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ramesaliyev/integer-factorization-with-js#readme",
   "dependencies": {
+    "bignumber.js": "7.2.1",
     "chai": "4.1.2",
     "mocha": "5.2.0"
   }

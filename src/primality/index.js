@@ -1,0 +1,1 @@
+module.exports.getPrimalityTester = name => require(`./${name}`);

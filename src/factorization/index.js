@@ -1,0 +1,1 @@
+module.exports.getFactorizator = name => require(`./${name}`);
