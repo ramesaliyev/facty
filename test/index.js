@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const { factorize } = require('../src');
 
 const factorizators = ['fermat'];
-const primalityTesters = ['fermat'];
+const primalityTesters = ['fermat', 'aks'];
 
 const numbers = [
   [2, 2],
