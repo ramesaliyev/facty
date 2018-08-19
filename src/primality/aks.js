@@ -1,4 +1,4 @@
-const math = require('mathjs');
+const { add, divide, equal, mod, multiply, subtract } = require('../utils');
 
 /** 
  * Binomial Coefficients
@@ -16,15 +16,7 @@ function* midBinomialCoefficientsGen(n) {
   const coeffs = [1];
   
   for (let k = 1; k < n; k++) {
-    yield (coeffs[k] = math.divide(
-      math.bignumber(
-        math.multiply(
-          math.bignumber(n + 1 - k),
-          math.bignumber(coeffs[k-1])
-        )
-      ),
-      k
-    ));
+    yield (coeffs[k] = divide(multiply((subtract(add(n, 1), k)), coeffs[k-1]), k));
   }
 }
 
@@ -47,7 +39,7 @@ const aksPrimalityTest = p => {
       return true;
     }
 
-    if (!math.mod(math.bignumber(value), p).eq(0)) {
+    if (!equal(mod(value, p), 0)) {
       return false;
     }
   }

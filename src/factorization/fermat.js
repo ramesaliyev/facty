@@ -1,4 +1,4 @@
-const { ceil, isSquare, pow, sqrt  } = require('../utils');
+const { add, ceil, isSquare, number, pow, sqrt, smallerEq, subtract } = require('../utils');
 
 /**
  * Fermat's Factorization Method
@@ -10,15 +10,15 @@ const { ceil, isSquare, pow, sqrt  } = require('../utils');
  * @param {Number} n 
  */
 const fermatsFactorizator = n => {
-  for (let x = ceil(sqrt(n)); x <= n; x++) {
-    const ySquared = pow(x, 2) - n;
-    
+  for (let x = ceil(sqrt(n)); smallerEq(x, n); x = add(x, 1)) {
+    const ySquared = subtract(pow(x, 2), n);
+
     if (isSquare(ySquared)) {
       const y = sqrt(ySquared);
 
       return [
-        x - y,
-        x + y
+        number(subtract(x, y)),
+        number(add(x, y)),
       ];
     }
   }

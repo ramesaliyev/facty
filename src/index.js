@@ -1,6 +1,6 @@
 const { getFactorizator } = require('./factorization');
 const { getPrimalityTester } = require('./primality');
-const { flat, isEven, isSquare, sort, sqrt, uniq } = require('./utils');
+const { flat, isEven, isSquare, number, sort, sqrt, uniq } = require('./utils');
 
 /**
  * Recursive integer factorizer.
@@ -11,7 +11,7 @@ const { flat, isEven, isSquare, sort, sqrt, uniq } = require('./utils');
  */
 const factorizer = (factorizator, isPrime, n) => {
   const recursive = x => factorizer(factorizator, isPrime, x);
-
+  
   if (n === 1) {
     return [];
   }
@@ -25,7 +25,7 @@ const factorizer = (factorizator, isPrime, n) => {
   }
 
   if (isSquare(n)) {
-    return recursive(sqrt(n));
+    return recursive(number(sqrt(n)));
   }
 
   return flat(factorizator(n).map(recursive));

@@ -1,4 +1,4 @@
-const { bignum } = require('../utils');
+const { equal, mod, pow, subtract } = require('../utils');
 
 /**
  * Fermat's Primality Tester
@@ -11,13 +11,13 @@ const fermatsPrimalityTest = p => {
   }
 
   for (let i = 1; i < p; i++) {
-    const f = bignum(i).pow(p).minus(i);
+    const f = subtract(pow(i, p), i);
 
-    if (f.eq(0)) {
+    if (equal(f, 0)) {
       continue;
     }
 
-    if (!f.mod(p).eq(0)) {
+    if (!equal(mod(f, p), 0)) {
       return false;
     }
   }
