@@ -1,1 +1,1 @@
-module.exports.getFactorizator = name => require(`./${name}`);
+module.exports.getFactorizator = name => name && require(`./${name}`);

@@ -1,8 +1,10 @@
 const { expect } = require('chai');
 const { factorize } = require('../src');
+const { trimin } = require('../src/utils');
 
 const factorizators = ['fermat'];
 const primalityTesters = ['fermat', 'aks'];
+const gcdCalculators = ['prime'];
 
 const numbers = [
   [2, 2],
@@ -24,15 +26,25 @@ const numbers = [
 ];
 
 describe('Prime Factorization Testing', () => {
-  factorizators.forEach(fMethod => {
-    primalityTesters.forEach(pMethod => {
-      describe(`Factorizator: ${fMethod}, Primarity Tester: ${pMethod}`, () => {
-        numbers.forEach(([number, ...factors]) => {
-          it(`should factorize ${number} as ${factors.toString()}`, () => {
-            expect(factorize(number, fMethod, pMethod)).to.deep.equal(factors);
+  factorizators.forEach(factorizator => {
+    primalityTesters.forEach(primalityTester => {
+      gcdCalculators.forEach(gcdCalculator => {
+        describe(trimin(`
+          ··· Factorizator: ${factorizator}
+          ··· Primarity Tester: ${primalityTester}
+          ··· GCD Calculator: ${gcdCalculator}
+        `), () => {
+          numbers.forEach(([number, ...factors]) => {
+            it(`should factorize ${number} as ${factors.toString()}`, () => {
+              expect(factorize(number, {
+                factorizator,
+                primalityTester,
+                gcdCalculator,
+              })).to.deep.equal(factors);
+            });
           });
         });
-      });
+      });  
     });
   });
 });

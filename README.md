@@ -9,6 +9,9 @@ For further reading about algorithms see [my research path](/RESEARCH_PATH.md).
   - [AKS Primality Tester](https://www.wikiwand.com/en/AKS_primality_test)
   - [Fermat's Primality Tester](https://www.wikiwand.com/en/Fermat_primality_test)
 
+#### Greatest Common Divisor (GCD) Calculating Algorithms
+  - [Using Prime Factorizations](https://www.wikiwand.com/en/Greatest_common_divisor#/Using_prime_factorizations)
+
 # Prerequisites
 - NodeJS (>= 8.11)
 - NPM (>= 6.4)

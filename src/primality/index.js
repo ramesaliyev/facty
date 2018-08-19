@@ -1,1 +1,1 @@
-module.exports.getPrimalityTester = name => require(`./${name}`);
+module.exports.getPrimalityTester = name => name && require(`./${name}`);

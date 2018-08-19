@@ -1,0 +1,1 @@
+module.exports.getGCDCalculator = name => name && require(`./${name}`);

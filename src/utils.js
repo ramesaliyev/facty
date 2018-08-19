@@ -79,6 +79,16 @@ const sort = arr =>
   arr.sort((a, b) => a - b);
 
 /**
+ * MATH UTILS
+ */
+
+/**
+ * Replace multiple spaces with one.
+ * @param {String} str 
+ */
+const trimin = str => str.replace(/ +(?= )/g, '');
+
+/**
  * EXPORTS
  */
 module.exports = {
@@ -88,5 +98,6 @@ module.exports = {
   isSquare,
   number,
   sort,
+  trimin,
   uniq
 };

@@ -1,5 +1,6 @@
 const { getFactorizator } = require('./factorization');
 const { getPrimalityTester } = require('./primality');
+const { getGCDCalculator } = require('./gcd');
 const { flat, isEven, isSquare, number, sort, sqrt, uniq } = require('./utils');
 
 /**
@@ -9,8 +10,9 @@ const { flat, isEven, isSquare, number, sort, sqrt, uniq } = require('./utils');
  * @param {Function} isPrime 
  * @param {Number} n 
  */
-const factorizer = (factorizator, isPrime, n) => {
-  const recursive = x => factorizer(factorizator, isPrime, x);
+const factorizer = (n, options) => {
+  const { factorizator, isPrime } = options;
+  const recursive = x => factorizer(x, options);
   
   if (n === 1) {
     return [];
@@ -28,7 +30,7 @@ const factorizer = (factorizator, isPrime, n) => {
     return recursive(number(sqrt(n)));
   }
 
-  return flat(factorizator(n).map(recursive));
+  return flat(factorizator(n, options).map(recursive));
 };
 
 /**
@@ -38,14 +40,23 @@ const factorizer = (factorizator, isPrime, n) => {
  * @param {String} fMethod Name of Factorization Method 
  * @param {String} pMethod Name of Primality Tester Method
  */
-const factorize = (n, fMethod = 'fermat', pMethod = 'fermat') => {
-  const factors = factorizer(
-    getFactorizator(fMethod),
-    getPrimalityTester(pMethod),
-    n
-  );
+const factorize = (n, {
+  factorizator = 'fermat',
+  primalityTester = 'fermat',
+  gcdCalculator = 'prime',
+  full = false,
+} = {}) => {
+  let factors = factorizer(n, {
+    factorizator: getFactorizator(factorizator),
+    isPrime: getPrimalityTester(primalityTester),
+    gcd: getGCDCalculator(gcdCalculator),
+  });
 
-  return sort(uniq(factors));
+  if (!full) {
+    factors = uniq(factors);
+  }
+
+  return sort(factors);
 };
 
 module.exports.factorize = factorize;
