@@ -1,8 +1,11 @@
 {
-  "name": "integer-factorization-with-js",
+  "name": "facty",
   "version": "0.1.0",
-  "description": "Integer Factorization Approaches with JS",
-  "main": "index.js",
+  "description": "Integer Factorization Approaches with JavaScript",
+  "main": "src/index.js",
+  "bin": {
+    "facty": "bin/facty.js"
+  },
   "scripts": {
     "test": "mocha test/index --timeout 5000"
   },
@@ -10,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/ramesaliyev/integer-factorization-with-js.git"
   },
-  "author": "",
+  "author": "Rameş Aliyev <creator@ramesaliyev.com> (http://ramesaliyev.com/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ramesaliyev/integer-factorization-with-js/issues"

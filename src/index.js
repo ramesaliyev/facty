@@ -15,6 +15,10 @@ const factorizer = (n, options) => {
   const { factorizator, isPrime } = options;
   const recursive = x => factorizer(x, options);
   
+  if (!n) {
+    return [];
+  }
+
   if (n === 1) {
     return [];
   }
