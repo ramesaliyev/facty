@@ -88,6 +88,14 @@ or ES6
     factorize(120, { full: true });
     // [2, 2, 2, 3, 5]
 
+# Cloning Repo & Running Tests
+##### Cloning
+    $ git clone git@github.com:ramesaliyev/facty.git
+##### Installing Dependencies
+    $ npm i
+##### Running Tests
+    $ npm t
+
 # Known Issues
 Right now the only known issue is that i dont know any issue. (Take this socrates!)
 
