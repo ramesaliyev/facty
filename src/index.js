@@ -27,7 +27,11 @@ const factorizer = (n, options) => {
   }
 
   if (isSquare(n)) {
-    return recursive(number(sqrt(n)));
+    const root = number(sqrt(n));
+    return [
+      ...recursive(root),
+      ...recursive(root)
+    ];
   }
 
   return flat(factorizator(n, options).map(recursive));
