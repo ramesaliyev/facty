@@ -99,4 +99,4 @@ or ES6
 Right now the only known issue is that i dont know any issue. (Take this socrates!)
 
 # License
-Licesed under MIT. So use it as you want.
+Licensed under MIT. So use it as you want.
