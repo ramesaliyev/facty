@@ -1,7 +1,19 @@
 {
   "name": "facty",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Integer Factorization Approaches with JavaScript",
+  "keywords": [
+    "aks",
+    "factor",
+    "factoring",
+    "factorization",
+    "facty",
+    "fermat",
+    "integer factorization",
+    "pollard rho",
+    "prime factorization",
+    "prime"
+  ],
   "main": "src/index.js",
   "bin": {
     "facty": "bin/facty.js"
@@ -20,8 +32,10 @@
   },
   "homepage": "https://github.com/ramesaliyev/integer-factorization-with-js#readme",
   "dependencies": {
+    "mathjs": "5.1.0"
+  },
+  "devDependencies": {
     "chai": "4.1.2",
-    "mathjs": "5.1.0",
     "mocha": "5.2.0"
   }
 }

@@ -14,15 +14,24 @@ For further reading about algorithms see [my research path](/RESEARCH_PATH.md).
   - [Using Prime Factorizations](https://www.wikiwand.com/en/Greatest_common_divisor#/Using_prime_factorizations)
 
 # Warning 
-Since these codes are for demonstration purpose only; main focus was keep it as readable as possible. Therefore there might be performance issues and problems with big numbers etc. I don't suggest to use or trust this code in production-like environments. But still you can use this in demonstration projects, prototype-like projects and/or projects that doesn't highly depend on performance etc.
+Since these codes are for demonstration purpose only; main focus was keep it as readable as possible. Therefore there might be performance issues (we need benchmarks) and problems with big numbers (although i've used mathjs to avoid that) etc. I don't suggest to use or trust this code in production-like environments. But you can give a try? Other than that i think you can use this in demonstration projects, prototype-like projects and/or projects that doesn't highly depend on performance etc. Or use this everywhere and improve the performance please. :)
 
 # What's Missing?
-More algorithms might be introduced such as basic ones like `trial division` duh!
+- More algorithms might be introduced such as basic ones like `trial division` duh!
+- Some performance benchmarks would be nice.
 
 # Prerequisites
 I've only tested with followings.
 - NodeJS (>= 8.11)
 - NPM (>= 6.4)
+
+# Factorizer Options
+|name|type|default|info|options |
+|---|---|---|---|---|
+|factorizator|enum|`fermat`|Algorithm going to use for factorization.|`fermat` or `pollard-rho`|
+|primalityTester|enum|`fermat`|Algorithm going to use for primality testing. |`fermat` or `aks`|
+|gcdCalculator|enum|`prime`|Algorithm going to use for GCD calculations.|`prime`|
+|full|boolean|`false`|Whether return full set of factors or not.|`true` or `false`|
 
 # CLI Notes
 - Arguments other than first one are optionals.
@@ -32,7 +41,7 @@ I've only tested with followings.
 ##### Installation
     $ npm i facty -g
 ##### Usage
-    $ facty <number> [factorizator] [primalityTester] [GCDCalculator] [full]
+    $ facty <number> [factorizator] [primalityTester] [gcdCalculator] [full]
 ##### Examples
     $ facty 120
     $ facty 120 fermat aks
@@ -41,7 +50,7 @@ I've only tested with followings.
   
 # CLI Usage: NPX
 ##### Direct Usage
-    $ npx facty <number> [factorizator] [primalityTester] [GCDCalculator] [full]
+    $ npx facty <number> [factorizator] [primalityTester] [gcdCalculator] [full]
 ##### Examples
     $ npx facty 120
     $ npx facty 120 fermat aks
@@ -61,25 +70,12 @@ or ES6
     // or
     import { factorize } from 'facty';
 ##### Usage
-    factorize(number, options);
-
-    options = {
-      factorizator: ('fermat' || 'pollard-rho'),
-        // Algorithm going to use for factorization.
-        // Default: fermat
-
-      primalityTester: ('fermat' || 'aks'),
-        // Algorithm going to use for primality testing.
-        // Default: fermat
-
-      GCDCalculator: ('prime'),
-        // Algorithm going to use for GCD calculations.
-        // Default: prime
-
-      full: (true || false)
-        // Whether return full factors sets or not.
-        // Default: false
-    };
+    factorize(number, {
+      factorizator: 'fermat',
+      primalityTester: 'fermat',
+      gcdCalculator: 'prime',
+      full: false
+    });
 
 ##### Examples
     factorize(120);
