@@ -1,4 +1,4 @@
-const { add, divide, equal, mod, multiply, subtract } = require('../utils');
+const { add, divide, equal, mod, multiply, subtract } = require('../utils/math');
 
 /** 
  * Binomial Coefficients

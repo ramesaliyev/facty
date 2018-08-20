@@ -1,4 +1,4 @@
-const { add, ceil, isSquare, number, pow, sqrt, smallerEq, subtract } = require('../utils');
+const { add, ceil, isSquare, number, pow, sqrt, smallerEq, subtract } = require('../utils/math');
 
 /**
  * Fermat's Factorization Method

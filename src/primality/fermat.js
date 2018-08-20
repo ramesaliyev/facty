@@ -1,4 +1,4 @@
-const { equal, mod, pow, subtract } = require('../utils');
+const { equal, mod, pow, subtract } = require('../utils/math');
 
 /**
  * Fermat's Primality Tester

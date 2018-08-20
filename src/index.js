@@ -1,7 +1,8 @@
 const { getFactorizator } = require('./factorization');
 const { getPrimalityTester } = require('./primality');
 const { getGCDCalculator } = require('./gcd');
-const { flat, isEven, isSquare, number, sort, sqrt, uniq } = require('./utils');
+const { isEven, isSquare, number, sqrt } = require('./utils/math');
+const { flat, sort, uniq } = require('./utils/array');
 
 /**
  * Recursive integer factorizer.

@@ -1,5 +1,5 @@
 const { factorize } = require('../index'); 
-const { uniq } = require('../utils');
+const { uniq } = require('../utils/array');
 
 /**
  * GCD Calculating
