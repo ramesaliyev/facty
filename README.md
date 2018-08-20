@@ -4,6 +4,7 @@ For further reading about algorithms see [my research path](/RESEARCH_PATH.md).
 
 #### Factorization Algorithms
   - [Fermat's Factorization Method](https://www.wikiwand.com/en/Fermat%27s_factorization_method)
+  - [Pollard's rho Algorithm](https://www.wikiwand.com/en/Pollard%27s_rho_algorithm)
 
 #### Primality Testing Algorithms
   - [AKS Primality Tester](https://www.wikiwand.com/en/AKS_primality_test)

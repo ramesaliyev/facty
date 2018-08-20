@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const { factorize } = require('../src');
 const { trimin } = require('../src/utils/string');
 
-const factorizators = ['fermat'];
+const factorizators = ['fermat', 'pollard-rho'];
 const primalityTesters = ['fermat', 'aks'];
 const gcdCalculators = ['prime'];
 

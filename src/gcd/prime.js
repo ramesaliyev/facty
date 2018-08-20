@@ -14,6 +14,10 @@ const primeGCDCalculator = (a, b) => {
     full: true,
   };
 
+  if (!a || !b) {
+    return 0;
+  }
+
   const factorsOfA = factorize(a, factorizeOptions);
   const factorsOfB = factorize(b, factorizeOptions);
 
