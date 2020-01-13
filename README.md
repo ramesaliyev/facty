@@ -1,8 +1,8 @@
+# Facty
+[![Downloads](https://img.shields.io/npm/dt/facty.svg)](https://www.npmjs.com/package/facty)
 [![NpmVersion](https://img.shields.io/npm/v/facty.svg)](https://www.npmjs.com/package/facty)
 
-
-# About 
-This repo contains some known algorithms to find prime factors of given integer.  
+This repo contains some known algorithms to find prime factors of given integer.
 For further reading about algorithms see [my research path](/RESEARCH_PATH.md).
 
 #### Factorization Algorithms
@@ -16,7 +16,7 @@ For further reading about algorithms see [my research path](/RESEARCH_PATH.md).
 #### Greatest Common Divisor (GCD) Calculating Algorithms
   - [Using Prime Factorizations](https://www.wikiwand.com/en/Greatest_common_divisor#/Using_prime_factorizations)
 
-# Warning 
+# Warning
 Since these codes are for demonstration purpose only; main focus was keep it as readable as possible. Therefore there might be performance issues (we need benchmarks) and problems with big numbers (although i've used mathjs to avoid that) etc. I don't suggest to use or trust this code in production-like environments. But you can give a try? Other than that i think you can use this in demonstration projects, prototype-like projects and/or projects that doesn't highly depend on performance etc. Or use this everywhere and improve the performance please. :)
 
 # What's Missing?
@@ -50,7 +50,7 @@ I've only tested with followings.
     $ facty 120 fermat aks
     $ facty 120 pollard-rho
     $ facty 120 0 0 0 true
-  
+
 # CLI Usage: NPX
 ##### Direct Usage
     $ npx facty <number> [factorizator] [primalityTester] [gcdCalculator] [full]
